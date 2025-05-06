@@ -27,8 +27,13 @@ screen.update()
 while game_over == False:
     screen.update()
     time.sleep(0.1)
-    for square in snake:
-        square.fd(10)
+    for seg in range(len(snake)-1,  0, -1):
+        new_x = snake[seg - 1].xcor()
+        new_y = snake[seg-1].ycor()
+        snake[seg].goto(new_x, new_y)
+    snake[0].fd(20)
+
+
 
 
 screen.exitonclick()
