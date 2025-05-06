@@ -32,6 +32,10 @@ while game_over == False:
     time.sleep(0.1)
     snake.move()
 
+    #Detect snake has ate food
+    if snake.head.distance(food) < 15:
+        food.refresh()
+
 
 
 
